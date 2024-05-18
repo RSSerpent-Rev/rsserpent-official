@@ -2,8 +2,8 @@
 name = "rsserpent-plugin-applovin"
 version = "0.1.0"
 
-authors = ["creedowl <creedowl@gmail.com>"]
-description = "An rsserpent plugin for bilibili.com."
+authors = ["EkkoG <beijiu572@gmail.com>"]
+description = "An rsserpent plugin for applovin sdk update."
 keywords = ["rss"]
 license = "MIT"
 readme = "README.md"
