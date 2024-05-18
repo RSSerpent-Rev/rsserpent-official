@@ -32,12 +32,12 @@ async def provider(platform: str) -> Dict[str, Any]:
     # },
 
     return {
-        "title": f"AppLovin {map_dict[platform.lower()]} SDK 更新日志",
+        "title": f"AppLovin Max {map_dict[platform.lower()]} SDK 更新日志",
         "link": url,
         "description": f"最新更新日期：{arrow.get(user_info[0]['published_at'], 'MMMM D, YYYY').format('YYYY-MM-DD')}",
         "items": [
             {
-                "title": f"AppLovin {map_dict[platform.lower()]} SDK {item['version']} 更新",
+                "title": f"AppLovin Max {map_dict[platform.lower()]} SDK {item['version']} 更新",
                 "description": item["content"],
                 "link": url,
                 "pub_date": arrow.get(item["published_at"], "MMMM D, YYYY"),
