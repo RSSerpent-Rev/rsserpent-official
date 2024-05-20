@@ -1,12 +1,20 @@
 services:
   web:
     container_name: rsserpent
-    image: ghcr.io/ekkog/rsserpent:master
-    ports:
-      - "8000:8000"
+    image: ghcr.io/rsserpent-rev/rsserpent:master
+    restart: always
+    networks:
+      imciel-com:
+        aliases: 
+          - internal-rsserpent.imciel.com
     environment:
       - PLAYWRIGHT_BROWSERS_PATH=/app/cache
     volumes:
       - ./.cache:/app/cache
       - ./plugins:/app/plugins
       - ./rsserpent.txt:/app/rsserpent.txt
+
+
+networks:
+  imciel-com:
+    name: imciel-com

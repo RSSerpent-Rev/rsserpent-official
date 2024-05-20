@@ -1,2 +1,3 @@
 rsserpent-plugin-applovin @ file:///app/plugins/rsserpent-plugin-applovin-sdk/
+rsserpent-plugin-bilibili @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-bilibili
 
