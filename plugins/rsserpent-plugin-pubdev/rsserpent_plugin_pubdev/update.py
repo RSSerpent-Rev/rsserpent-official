@@ -41,12 +41,14 @@ async def provider(package: str) -> Dict[str, Any]:
         tbody = tree.xpath("//tbody")[0]
         rows = tbody.xpath(".//tr")
         # <a class="-x-ago" href="" title="May 8, 2024" aria-label="12 days ago" aria-role="button" role="button" data-timestamp="1715192211854">12 days ago</a>
+        # <a class="-x-ago" href="" title="3 months ago" aria-label="3 months ago" aria-role="button" role="button" data-timestamp="1708001900493">Feb 15, 2024</a>
         items = [
             {
                 "title": f"{package} {row.xpath('.//td')[0].text_content()} 更新",
                 "description": changelog.get(row.xpath('.//td')[0].text_content(), ""),
                 "link": "https://pub.dev" + row.xpath('.//td')[0].xpath(".//a")[0].attrib["href"],
-                "pub_date": get_date(row.xpath('.//td')[3].xpath(".//a")[0].attrib["title"]),
+                # format a tag's data-timestamp
+                "pub_date": arrow.get(row.xpath('.//td')[3].xpath(".//a")[0].attrib["data-timestamp"], "x"),
             }
             for row in rows
         ]
