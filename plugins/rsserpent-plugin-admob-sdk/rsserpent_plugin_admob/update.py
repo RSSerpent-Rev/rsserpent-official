@@ -51,8 +51,6 @@ async def provider(platform: str) -> Dict[str, Any]:
                 "pub_date": get_date(date_str),
             })
 
-    print("items:", items)
-
     return {
         "title": f"AdMob SDK {map_dict[platform]} Update",
         "link": url,
