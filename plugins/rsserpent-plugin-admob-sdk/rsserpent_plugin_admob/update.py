@@ -10,18 +10,15 @@ path = "/admob/sdk-update/{platform}"
 
 def get_date(date_str: str) -> arrow.Arrow:
     formats = ["YYYY-MM-DD", "YYYY-M-DD", "MMMM D, YYYY", "YYYY‑MM‑DD"]
-    print('date_str:', date_str)
     for fmt in formats:
         try:
             date = arrow.get(date_str.strip(), fmt)
-            print('date:', date)
             break
         except Exception as e:
-            print(e)
             date = arrow.now()
 
-    print("final date:", date)
     return date
+
 
 @cached
 async def provider(platform: str) -> Dict[str, Any]:

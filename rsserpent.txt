@@ -1,4 +1,5 @@
 rsserpent-plugin-applovin @ file:///app/plugins/rsserpent-plugin-applovin-sdk/
 rsserpent-plugin-admob @ file:///app/plugins/rsserpent-plugin-admob-sdk/
+rsserpent-plugin-pubdev @ file:///app/plugins/rsserpent-plugin-pubdev/
 rsserpent-plugin-bilibili @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-bilibili
 
