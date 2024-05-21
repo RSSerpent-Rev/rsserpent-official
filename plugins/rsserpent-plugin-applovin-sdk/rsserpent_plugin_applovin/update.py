@@ -31,11 +31,7 @@ async def provider(platform: str) -> Dict[str, Any]:
     #     "content": "<ul>\n<li>Various fixes to the <a href=\"https://developers.applovin.com/en/ios/overview/new-sdk-initialization-api\">new init APIs</a>.</li>\n<li>Fix <code>+[ALLogger isVerboseForSdk:]</code> crash.</li>\n</ul>\n"
     # },
 
-    return {
-        "title": f"AppLovin Max {map_dict[platform.lower()]} SDK 更新日志",
-        "link": url,
-        "description": f"最新更新日期：{arrow.get(user_info[0]['published_at'], 'MMMM D, YYYY').format('YYYY-MM-DD')}",
-        "items": [
+    items = [
             {
                 "title": f"AppLovin Max {map_dict[platform.lower()]} SDK {item['version']} 更新",
                 "description": item["content"],
@@ -43,5 +39,11 @@ async def provider(platform: str) -> Dict[str, Any]:
                 "pub_date": arrow.get(item["published_at"], "MMMM D, YYYY"),
             }
             for item in user_info
-        ],
+        ]
+    return {
+        "title": f"AppLovin Max {map_dict[platform.lower()]} SDK 更新日志",
+        "link": url,
+        "description": f"最新更新日期：{arrow.get(user_info[0]['published_at'], 'MMMM D, YYYY').format('YYYY-MM-DD')}",
+        "pub_date": items[0]["pub_date"],
+        "items": items,
     }
