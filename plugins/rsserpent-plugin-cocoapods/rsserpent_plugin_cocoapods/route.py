@@ -6,13 +6,14 @@ import feedparser
 from starlette.exceptions import HTTPException
 import hashlib
 
+from . import plugins
+
 path = "/cocoapods/{pod}"
 
 # get all plugins under current module's submodule named "plugins"
 def get_plugins():
     import importlib
     import pkgutil
-    from . import plugins
 
     _plugins = []
     for _, name, _ in pkgutil.iter_modules(plugins.__path__):
@@ -27,6 +28,10 @@ async def provider(pod: str) -> Dict[str, Any]:
     first = list(filter(lambda x: x.plugin['pod'] == pod, get_plugins()))
     if first:
         return await first[0].plugin["provider"]()
+
+    github_release_note = await plugins.github_release.get_changelog(pod)
+    if github_release_note:
+        return github_release_note
 
     md5 = hashlib.md5(pod.encode()).hexdigest()
     commit_atom = f"https://github.com/CocoaPods/Specs/commits/master/Specs/{md5[0]}/{md5[1]}/{md5[2]}/{pod}.atom"
