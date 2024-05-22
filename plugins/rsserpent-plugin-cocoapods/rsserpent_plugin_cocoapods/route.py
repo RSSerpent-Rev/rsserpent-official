@@ -27,6 +27,10 @@ def get_plugins():
 async def provider(pod: str) -> Dict[str, Any]:
     first = list(filter(lambda x: x.plugin['pod'] == pod, get_plugins()))
     if first:
+        if 'github' in first[0].plugin:
+            notes = plugins.github_release.get_changelog_by_url(first[0].plugin["github"])
+            if notes:
+                return notes
         return await first[0].plugin["provider"]()
 
     github_release_note = await plugins.github_release.get_changelog(pod)
