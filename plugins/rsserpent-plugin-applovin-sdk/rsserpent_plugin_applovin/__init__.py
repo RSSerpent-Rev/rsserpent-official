@@ -1,6 +1,6 @@
 from rsserpent.models import Persona, Plugin
 
-from . import update
+from . import route
 
 
 plugin = Plugin(
@@ -13,6 +13,6 @@ plugin = Plugin(
     prefix="/applovin/sdk",
     repository="https://github.com/EkkoG/rsserpent-plugin-applovin-sdk",
     routers={
-        update.path: update.provider,
+        route.path: route.provider,
     },
 )
