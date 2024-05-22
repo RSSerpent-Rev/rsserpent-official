@@ -25,7 +25,7 @@ async def provider(pod: str) -> Dict[str, Any]:
         "FacebookSDK": "https://github.com/facebook/facebook-ios-sdk/blob/main/CHANGELOG.md",
         "Ads-CN": "https://www.csjplatform.com/supportcenter/5373",
         "Ads-Gloabl": "https://www.csjplatform.com/supportcenter/5373",
-        "AppsFlyer": "https://support.appsflyer.com/hc/en-us/articles/115001224823-AppsFlyer-iOS-SDK-release-notes",
+        "AppsFlyerFramework": "https://support.appsflyer.com/hc/en-us/articles/115001224823-AppsFlyer-iOS-SDK-release-notes",
     }
 
     return {
