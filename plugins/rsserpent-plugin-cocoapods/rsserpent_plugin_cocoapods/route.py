@@ -12,12 +12,21 @@ path = "/cocoapods/{pod}"
 
 @cached
 async def provider(pod: str) -> Dict[str, Any]:
-    """Define a basic example data provider function."""
     md5 = hashlib.md5(pod.encode()).hexdigest()
     commit_atom = f"https://github.com/CocoaPods/Specs/commits/master/Specs/{md5[0]}/{md5[1]}/{md5[2]}/{pod}.atom"
     feed = feedparser.parse(commit_atom)
     if not feed.entries:
         raise HTTPException(status_code=404, detail="Pod not found")
+
+    changelog_url = {
+        "Google-Mobile-Ads-SDK": "https://developers.google.com/admob/ios/rel-notes",
+        "AppLovinSDK": "https://developers.applovin.com/en/ios/changelog",
+        "Firebase": "https://firebase.google.com/support/release-notes/ios",
+        "FacebookSDK": "https://github.com/facebook/facebook-ios-sdk/blob/main/CHANGELOG.md",
+        "Ads-CN": "https://www.csjplatform.com/supportcenter/5373",
+        "Ads-Gloabl": "https://www.csjplatform.com/supportcenter/5373",
+        "AppsFlyer": "https://support.appsflyer.com/hc/en-us/articles/115001224823-AppsFlyer-iOS-SDK-release-notes",
+    }
 
     return {
         "title": f"{pod} Changelog",
@@ -25,7 +34,7 @@ async def provider(pod: str) -> Dict[str, Any]:
         "description": feed.feed.title,
         "items": list(map(lambda x: {
             "title": x.title,
-            "description": x.content[0].value,
+            "description": x.title + ("\n" + f"Changelog: {changelog_url.get(pod, '')}" if pod in changelog_url else ""),
             "link": x.link,
             "pub_date": arrow.get(x.updated),
         }, feed.entries))
