@@ -1,5 +1,5 @@
-rsserpent-plugin-applovin @ file:///app/plugins/rsserpent-plugin-applovin-sdk/
-rsserpent-plugin-admob @ file:///app/plugins/rsserpent-plugin-admob-sdk/
+rsserpent-plugin-applovin-sdk-update @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-applovin
+rsserpent-plugin-admob-sdk-update @ git+https://github.com/EkkoG/rsserpent-plugin-admob-sdk-update
 rsserpent-plugin-pubdev @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-pubdev
 rsserpent-plugin-cocoapods @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-cocoapods
 rsserpent-plugin-apple-upcoming-requirements @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-apple-upcoming-requirements
