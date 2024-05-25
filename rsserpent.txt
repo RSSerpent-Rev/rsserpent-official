@@ -4,4 +4,9 @@ rsserpent-plugin-pubdev @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-
 rsserpent-plugin-cocoapods @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-cocoapods
 rsserpent-plugin-apple-upcoming-requirements @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-apple-upcoming-requirements
 rsserpent-plugin-bilibili @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-bilibili
+# rsserpent-plugin-manhuagui @ file+file:///Users/ciel/Documents/workspace/rsserpent_plugin_manhuagui
+rsserpent-plugin-manhuagui @ git+https://github.com/EkkoG/rsserpent_plugin_manhuagui
+rsserpent-plugin-zhubai @ git+https://github.com/EkkoG/rsserpent-plugin-zhubai
+rsserpent-plugin-caa @ git+https://github.com/EkkoG/rsserpent-plugin-caa
+rsserpent-plugin-douban @ git+https://github.com/EkkoG/rsserpent-plugin-douban
 
