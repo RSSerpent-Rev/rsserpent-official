@@ -9,4 +9,4 @@ rsserpent-plugin-manhuagui @ git+https://github.com/EkkoG/rsserpent_plugin_manhu
 rsserpent-plugin-zhubai @ git+https://github.com/EkkoG/rsserpent-plugin-zhubai
 rsserpent-plugin-caa @ git+https://github.com/EkkoG/rsserpent-plugin-caa
 rsserpent-plugin-douban @ git+https://github.com/EkkoG/rsserpent-plugin-douban
-
+rsserpent-plugin-slackware-news @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-slackware-news
