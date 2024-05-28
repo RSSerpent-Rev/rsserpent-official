@@ -7,6 +7,8 @@ services:
       imciel-com:
         aliases: 
           - internal-rsserpent.imciel.com
+    env_file:
+      - .env
     environment:
       - PLAYWRIGHT_BROWSERS_PATH=/app/cache
     volumes:
