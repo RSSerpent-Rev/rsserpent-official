@@ -11,3 +11,4 @@ rsserpent-plugin-caa @ git+https://github.com/EkkoG/rsserpent-plugin-caa
 rsserpent-plugin-douban @ git+https://github.com/EkkoG/rsserpent-plugin-douban
 rsserpent-plugin-slackware-news @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-slackware-news
 rsserpent-plugin-csj-sdk-update @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-csj-sdk-update
+rsserpent-plugin-rss-proxy @ git+https://github.com/RSSerpent-Rev/rsserpent-plugin-rss-proxy
