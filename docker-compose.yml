@@ -1,7 +1,7 @@
 services:
   rsserpent:
     container_name: rsserpent-official
-    image: ghcr.io/rsserpent-rev/rsserpent:master
+    image: ghcr.io/rsserpent-rev/rsserpent:main
     restart: always
     networks:
       imciel-com:
